@@ -45,18 +45,19 @@ const StyledInput = styled.input`
   font-family: inherit;
   width: 10em;
   border: 0;
-  border-bottom: 1px solid #f5f6fa;
+  border-bottom: 2px solid #f5f6fa;
   outline: 0;
   font-size: 1.1em;
   color: #f5f6fa;
-  padding: 7px 0;
+  border-radius: 0.3em;
   background: transparent;
   text-align: center;
-  padding-bottom: 0;
+  padding: 0;
 `;
 
 const StyledLabel = styled.label`
   font-size: 1.2em;
+  font-weight: 500;
 `;
 
 /**

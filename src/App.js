@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import SearchButton from './Components/SearchButton';
-import GetStarted from './Components/GetStarted';
 import Header from './Components/Header';
+import GetStarted from './Components/GetStarted';
+import SearchButton from './Components/SearchButton';
 import LyricsSection from './Components/LyricsSection';
 import Footer from './Components/Footer';
 
@@ -38,13 +38,16 @@ function App() {
    * Using method split and map on response
    */
   const APICall = () => {
-    customAxios
-      .get(`/${artistValue}/${songValue}`)
-      .then((response) =>
-        setLyricsValue(
-          response.data.lyrics.split('\n').map((newDiv) => <div>{newDiv}</div>)
-        )
-      );
+    customAxios.get(`/${artistValue}/${songValue}`).then((response) =>
+      setLyricsValue(
+        response.data.lyrics.split('\n').map((newDiv) => (
+          <div>
+            {newDiv}
+            <br />
+          </div>
+        ))
+      )
+    );
   };
 
   /**
