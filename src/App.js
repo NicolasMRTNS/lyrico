@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
 import SearchButton from './Components/SearchButton';
 import GetStarted from './Components/GetStarted';
 import Header from './Components/Header';
 import LyricsSection from './Components/LyricsSection';
-import axios from 'axios';
+import Footer from './Components/Footer';
 
 /**
  * Using axios to call the API, using baseURL
@@ -70,6 +71,7 @@ function App() {
       />
       <SearchButton handleClick={APICall} />
       <LyricsSection songLyrics={lyricsValue} />
+      <Footer />
     </>
   );
 }
