@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 /**
  * Rendered JSX
@@ -57,6 +58,18 @@ const StyledInput = styled.input`
 const StyledLabel = styled.label`
   font-size: 1.2em;
 `;
+
+/**
+ * Prop Types
+ */
+GetStarted.propTypes = {
+  forValue: PropTypes.string.isRequired,
+  inputName: PropTypes.string.isRequired,
+  nameValue: PropTypes.string.isRequired,
+  idValue: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
 
 /**
  * Export

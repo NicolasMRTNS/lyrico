@@ -3,6 +3,7 @@ import './App.css';
 import SearchButton from './Components/SearchButton';
 import GetStarted from './Components/GetStarted';
 import Header from './Components/Header';
+import LyricsSection from './Components/LyricsSection';
 import axios from 'axios';
 
 /**
@@ -18,6 +19,7 @@ function App() {
    */
   const [artistValue, setArtistValue] = useState('');
   const [songValue, setSongValue] = useState('');
+  const [lyricsValue, setLyricsValue] = useState('');
 
   /**
    * HandleChange on both inputs
@@ -32,11 +34,16 @@ function App() {
 
   /**
    * Call to the API on button click
+   * Using method split and map on response
    */
   const APICall = () => {
     customAxios
       .get(`/${artistValue}/${songValue}`)
-      .then((response) => console.log(JSON.stringify(response.data)));
+      .then((response) =>
+        setLyricsValue(
+          response.data.lyrics.split('\n').map((newDiv) => <div>{newDiv}</div>)
+        )
+      );
   };
 
   /**
@@ -62,6 +69,7 @@ function App() {
         value={songValue}
       />
       <SearchButton handleClick={APICall} />
+      <LyricsSection songLyrics={lyricsValue} />
     </>
   );
 }
