@@ -5,28 +5,43 @@ import GetStarted from './Components/GetStarted';
 import Header from './Components/Header';
 import axios from 'axios';
 
+/**
+ * Using axios to call the API, using baseURL
+ */
 const customAxios = axios.create({
   baseURL: `https://api.lyrics.ovh/v1/`,
 });
 
 function App() {
+  /**
+   * State for the values needed
+   */
   const [artistValue, setArtistValue] = useState('');
   const [songValue, setSongValue] = useState('');
 
-  const getArtistName = () => {
-    setArtistValue(artistValue);
+  /**
+   * HandleChange on both inputs
+   */
+  const getArtistName = (event) => {
+    setArtistValue(event.target.value);
   };
 
-  const getSongName = () => {
-    setSongValue(songValue);
+  const getSongName = (event) => {
+    setSongValue(event.target.value);
   };
 
+  /**
+   * Call to the API on button click
+   */
   const APICall = () => {
     customAxios
       .get(`/${artistValue}/${songValue}`)
       .then((response) => console.log(JSON.stringify(response.data)));
   };
 
+  /**
+   * Rendered JSX
+   */
   return (
     <>
       <Header />
@@ -51,4 +66,7 @@ function App() {
   );
 }
 
+/**
+ * Export
+ */
 export default App;
