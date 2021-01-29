@@ -11,6 +11,7 @@ const Footer = () => {
         Made by{' '}
         <StyledLink
           href="https://github.com/NicolasMRTNS"
+          title="GitHub Link"
           target="_blank"
           rel="noreferrer"
         >
@@ -20,12 +21,30 @@ const Footer = () => {
         Special thanks to{' '}
         <StyledLink
           href="https://lyricsovh.docs.apiary.io/#"
+          title="API Link"
           target="_blank"
           rel="norefferer"
         >
           lyrics.ovh
         </StyledLink>{' '}
-        for the API
+        for the API. Logo made by{' '}
+        <StyledLink
+          href="https://www.freepik.com"
+          title="Freepik"
+          target="_blank"
+          rel="norefferer"
+        >
+          Freepik
+        </StyledLink>{' '}
+        from{' '}
+        <StyledLink
+          href="https://www.flaticon.com/"
+          title="Flaticon"
+          target="_blank"
+          rel="norefferer"
+        >
+          flaticon.com
+        </StyledLink>
       </StyledParagraph>
     </StyledFooter>
   );
