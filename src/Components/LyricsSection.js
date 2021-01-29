@@ -21,7 +21,7 @@ const StyledSection = styled.section`
  * PropTypes
  */
 LyricsSection.propTypes = {
-  songLyrics: PropTypes.string.isRequired,
+  songLyrics: PropTypes.array.isRequired,
 };
 
 /**

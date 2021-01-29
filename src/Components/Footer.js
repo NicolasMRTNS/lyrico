@@ -27,7 +27,9 @@ const Footer = () => {
         >
           lyrics.ovh
         </StyledLink>{' '}
-        for the API. Logo made by{' '}
+        for the API.
+        <br />
+        Logo made by{' '}
         <StyledLink
           href="https://www.freepik.com"
           title="Freepik"

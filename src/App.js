@@ -41,7 +41,7 @@ function App() {
     customAxios.get(`/${artistValue}/${songValue}`).then((response) =>
       setLyricsValue(
         response.data.lyrics.split('\n').map((newDiv) => (
-          <div>
+          <div key={Math.random()}>
             {newDiv}
             <br />
           </div>
