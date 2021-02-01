@@ -13,7 +13,7 @@ const Footer = () => {
           href="https://github.com/NicolasMRTNS"
           title="GitHub Link"
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
         >
           Nicolas Martins
         </StyledLink>
@@ -23,7 +23,7 @@ const Footer = () => {
           href="https://lyricsovh.docs.apiary.io/#"
           title="API Link"
           target="_blank"
-          rel="norefferer"
+          rel="norefferer noopener"
         >
           lyrics.ovh
         </StyledLink>{' '}
@@ -34,7 +34,7 @@ const Footer = () => {
           href="https://www.freepik.com"
           title="Freepik"
           target="_blank"
-          rel="norefferer"
+          rel="norefferer noopener"
         >
           Freepik
         </StyledLink>{' '}
@@ -43,7 +43,7 @@ const Footer = () => {
           href="https://www.flaticon.com/"
           title="Flaticon"
           target="_blank"
-          rel="norefferer"
+          rel="norefferer noopener"
         >
           flaticon.com
         </StyledLink>
