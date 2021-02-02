@@ -26,7 +26,7 @@ const StyledButton = styled.button`
   font-size: 1.2em;
   margin-top: 1em;
   font-family: inherit;
-  background: #00a8ff;
+  background: #89d7ff;
   color: #171f24;
   border: 0;
   border-radius: 0.5em;

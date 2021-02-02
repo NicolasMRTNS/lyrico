@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './App.css';
 import Header from './Components/Header';
 import GetStarted from './Components/GetStarted';
 import SearchButton from './Components/SearchButton';
@@ -14,7 +13,7 @@ const customAxios = axios.create({
   baseURL: `https://api.lyrics.ovh/v1/`,
 });
 
-function App() {
+const App = () => {
   /**
    * State for the values needed
    */
@@ -77,7 +76,7 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 /**
  * Export

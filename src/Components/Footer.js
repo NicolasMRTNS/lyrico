@@ -66,7 +66,7 @@ const StyledParagraph = styled.p`
   padding: 0;
 `;
 const StyledLink = styled.a`
-  color: #00a8ff;
+  color: #89d7ff;
 `;
 
 /**

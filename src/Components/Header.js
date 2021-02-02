@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledH1>Lyrico</StyledH1>
+      <StyledH1>Parola</StyledH1>
       <StyledH2>Lyrics for your favorite songs</StyledH2>
     </StyledHeader>
   );
