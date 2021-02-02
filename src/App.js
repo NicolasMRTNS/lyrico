@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import axios from 'axios';
-import Header from './Components/Header';
-import GetStarted from './Components/GetStarted';
-import SearchButton from './Components/SearchButton';
-import LyricsSection from './Components/LyricsSection';
-import Footer from './Components/Footer';
+const Header = lazy(() => import('./Components/Header'));
+const GetStarted = lazy(() => import('./Components/GetStarted'));
+const SearchButton = lazy(() => import('./Components/SearchButton'));
+const LyricsSection = lazy(() => import('./Components/LyricsSection'));
+const Footer = lazy(() => import('./Components/Footer'));
+
+/**
+ * Loader for Suspense as we are using Reeact.lazy
+ */
+const renderLoader = () => <p>Loading...</p>;
 
 /**
  * Using axios to call the API, using baseURL
@@ -54,26 +59,28 @@ const App = () => {
    */
   return (
     <>
-      <Header />
-      <GetStarted
-        forValue="artistName"
-        inputName="Artist"
-        nameValue="artistName"
-        idValue="artistName"
-        handleChange={getArtistName}
-        value={artistValue}
-      />
-      <GetStarted
-        forValue="songName"
-        inputName="Song"
-        nameValue="songName"
-        idValue="songName"
-        handleChange={getSongName}
-        value={songValue}
-      />
-      <SearchButton handleClick={APICall} />
-      <LyricsSection songLyrics={lyricsValue} />
-      <Footer />
+      <Suspense fallback={renderLoader()}>
+        <Header />
+        <GetStarted
+          forValue="artistName"
+          inputName="Artist"
+          nameValue="artistName"
+          idValue="artistName"
+          handleChange={getArtistName}
+          value={artistValue}
+        />
+        <GetStarted
+          forValue="songName"
+          inputName="Song"
+          nameValue="songName"
+          idValue="songName"
+          handleChange={getSongName}
+          value={songValue}
+        />
+        <SearchButton handleClick={APICall} />
+        <LyricsSection songLyrics={lyricsValue} />
+        <Footer />
+      </Suspense>
     </>
   );
 };
