@@ -7,7 +7,7 @@ const LyricsSection = lazy(() => import('./Components/LyricsSection'));
 const Footer = lazy(() => import('./Components/Footer'));
 
 /**
- * Loader for Suspense as we are using Reeact.lazy
+ * Loader for Suspense as we are using React.lazy
  */
 const renderLoader = () => <p>Loading...</p>;
 
@@ -39,19 +39,26 @@ const App = () => {
 
   /**
    * Call to the API on button click
-   * Using method split and map on response
+   * Using an if statement to tell user if the song doesn't exist or to check for typos
+   * Using method split and map on response to get some style in the lyrics response
    */
   const APICall = () => {
-    customAxios.get(`/${artistValue}/${songValue}`).then((response) =>
-      setLyricsValue(
-        response.data.lyrics.split('\n').map((newDiv) => (
-          <div key={Math.random()}>
-            {newDiv}
-            <br />
-          </div>
-        ))
-      )
-    );
+    customAxios.get(`/${artistValue}/${songValue}`).then((response) => {
+      if (response.data.lyrics === '') {
+        setLyricsValue(
+          `Oops, there was an error. Either there is a typo in the artist/song name or the lyrics are not available for the song.`
+        );
+      } else {
+        setLyricsValue(
+          response.data.lyrics.split('\n').map((newDiv) => (
+            <div key={Math.random()}>
+              {newDiv}
+              <br />
+            </div>
+          ))
+        );
+      }
+    });
   };
 
   /**
